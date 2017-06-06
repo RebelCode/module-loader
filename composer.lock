@@ -4,8 +4,273 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bee4c9f123f707e893ac4804558d2d5",
-    "packages": [],
+    "content-hash": "1968a9b9fef8cebe1f5923c1e85599e2",
+    "packages": [
+        {
+            "name": "container-interop/service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/service-provider.git",
+                "reference": "11438df79eb706af214f13b6825a2235047a1ca9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/service-provider/zipball/11438df79eb706af214f13b6825a2235047a1ca9",
+                "reference": "11438df79eb706af214f13b6825a2235047a1ca9",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting container interoperability through standard service providers",
+            "homepage": "https://github.com/container-interop/service-provider",
+            "time": "2017-02-15 19:27:50"
+        },
+        {
+            "name": "dhii/data-identifiable-interface",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/data-identifiable-interface.git",
+                "reference": "59e160c85c9d9246ce51ad611ce2bb686ba3dc2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/data-identifiable-interface/zipball/59e160c85c9d9246ce51ad611ce2bb686ba3dc2d",
+                "reference": "59e160c85c9d9246ce51ad611ce2bb686ba3dc2d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Data\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for objects that are identifiable.",
+            "time": "2017-03-07 16:25:09"
+        },
+        {
+            "name": "dhii/factory-interface",
+            "version": "dev-task/initial-interfaces",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/factory-interface.git",
+                "reference": "09ce63b7f023c4386ba280444b2d091fda548c6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/factory-interface/zipball/09ce63b7f023c4386ba280444b2d091fda548c6e",
+                "reference": "09ce63b7f023c4386ba280444b2d091fda548c6e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "psr/container": "^1.0",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Factory\\": "src"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fixer fix -vvv"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/Dhii/factory-interface/tree/task/initial-interfaces",
+                "issues": "https://github.com/Dhii/factory-interface/issues"
+            },
+            "time": "2017-06-02 13:01:12"
+        },
+        {
+            "name": "dhii/loop-machine",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/machine-loop-machine.git",
+                "reference": "508b8307e020aeeaf9a92a896ee0467c182e0e72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/machine-loop-machine/zipball/508b8307e020aeeaf9a92a896ee0467c182e0e72",
+                "reference": "508b8307e020aeeaf9a92a896ee0467c182e0e72",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Machine\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "An event-less, simple iterative machine that notifies observers on each iteration.",
+            "support": {
+                "source": "https://github.com/Dhii/machine-loop-machine/tree/master",
+                "issues": "https://github.com/Dhii/machine-loop-machine/issues"
+            },
+            "time": "2017-06-06 12:57:10"
+        },
+        {
+            "name": "dhii/modular-interface",
+            "version": "dev-task/initial-interface",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/modular-interface.git",
+                "reference": "4c0b6e53b74b986c556e0e9b2ad7a9b906213bde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/4c0b6e53b74b986c556e0e9b2ad7a9b906213bde",
+                "reference": "4c0b6e53b74b986c556e0e9b2ad7a9b906213bde",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/data-identifiable-interface": "dev-master",
+                "dhii/factory-interface": "dev-task/initial-interfaces",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Modular\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for modular systems.",
+            "time": "2017-06-05 15:32:40"
+        },
+        {
+            "name": "psr/container",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14 16:28:37"
+        }
+    ],
     "packages-dev": [
         {
             "name": "codeclimate/php-test-reporter",
@@ -103,7 +368,7 @@
                 }
             ],
             "description": "A default PHP CS Fixer config implementation",
-            "time": "2016-09-03T14:45:03+00:00"
+            "time": "2016-09-03 14:45:03"
         },
         {
             "name": "doctrine/instantiator",
@@ -157,7 +422,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2017-02-16T16:15:51+00:00"
+            "time": "2017-02-16 16:15:51"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -362,7 +627,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2017-04-30T11:58:12+00:00"
+            "time": "2017-04-30 11:58:12"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -517,7 +782,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-05-31T16:22:32+00:00"
+            "time": "2017-05-31 16:22:32"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -579,7 +844,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-06T15:47:00+00:00"
+            "time": "2015-10-06 15:47:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -626,7 +891,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2016-10-03T07:40:28+00:00"
+            "time": "2016-10-03 07:40:28"
         },
         {
             "name": "phpunit/php-text-template",
@@ -716,7 +981,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2017-03-07T15:42:04+00:00"
+            "time": "2017-03-07 15:42:04"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -765,7 +1030,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-03-07T08:21:50+00:00"
+            "time": "2017-03-07 08:21:50"
         },
         {
             "name": "phpunit/phpunit",
@@ -837,7 +1102,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-04T06:40:26+00:00"
+            "time": "2017-03-04 06:40:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -893,7 +1158,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-10-02T06:51:40+00:00"
+            "time": "2015-10-02 06:51:40"
         },
         {
             "name": "psr/log",
@@ -940,7 +1205,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "ptrofimov/xpmock",
@@ -1031,7 +1296,7 @@
                 "github",
                 "test"
             ],
-            "time": "2017-02-25T12:10:28+00:00"
+            "time": "2017-02-25 12:10:28"
         },
         {
             "name": "sebastian/comparator",
@@ -1095,7 +1360,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-03-07T10:34:43+00:00"
+            "time": "2017-03-07 10:34:43"
         },
         {
             "name": "sebastian/diff",
@@ -1147,7 +1412,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-05-22T07:24:03+00:00"
+            "time": "2017-05-22 07:24:03"
         },
         {
             "name": "sebastian/environment",
@@ -1197,7 +1462,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-02-28T08:18:59+00:00"
+            "time": "2017-02-28 08:18:59"
         },
         {
             "name": "sebastian/exporter",
@@ -1264,7 +1529,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2017-02-26T13:09:30+00:00"
+            "time": "2017-02-26 13:09:30"
         },
         {
             "name": "sebastian/global-state",
@@ -1315,7 +1580,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2017-02-23T14:11:06+00:00"
+            "time": "2017-02-23 14:11:06"
         },
         {
             "name": "sebastian/recursion-context",
@@ -1368,7 +1633,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2016-10-03T07:41:43+00:00"
+            "time": "2016-10-03 07:41:43"
         },
         {
             "name": "sebastian/version",
@@ -1463,7 +1728,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02T18:32:02+00:00"
+            "time": "2017-06-02 18:32:02"
         },
         {
             "name": "symfony/console",
@@ -1532,7 +1797,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02T19:25:52+00:00"
+            "time": "2017-06-02 19:25:52"
         },
         {
             "name": "symfony/debug",
@@ -1588,7 +1853,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T21:02:15+00:00"
+            "time": "2017-06-01 21:02:15"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1651,7 +1916,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-06T04:51:36+00:00"
+            "time": "2017-06-06 04:51:36"
         },
         {
             "name": "symfony/filesystem",
@@ -1700,7 +1965,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-28T14:09:32+00:00"
+            "time": "2017-05-28 14:09:32"
         },
         {
             "name": "symfony/finder",
@@ -1749,7 +2014,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T21:02:15+00:00"
+            "time": "2017-06-01 21:02:15"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1808,7 +2073,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-05-29T15:51:17+00:00"
+            "time": "2017-05-29 15:51:17"
         },
         {
             "name": "symfony/process",
@@ -1857,7 +2122,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-24T11:37:21+00:00"
+            "time": "2017-05-24 11:37:21"
         },
         {
             "name": "symfony/stopwatch",
@@ -1906,7 +2171,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17T16:21:40+00:00"
+            "time": "2017-05-17 16:21:40"
         },
         {
             "name": "symfony/yaml",
@@ -2011,12 +2276,15 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-11-23T20:04:41+00:00"
+            "time": "2016-11-23 20:04:41"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dhii/modular-interface": 20,
+        "container-interop/service-provider": 20,
+        "dhii/loop-machine": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,

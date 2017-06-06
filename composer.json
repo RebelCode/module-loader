@@ -26,5 +26,15 @@
         "psr-4": {
             "RebelCode\\Modular\\": "src"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Dhii/machine-loop-machine"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Dhii/factory-interface"
+        }
+    ]
 }
