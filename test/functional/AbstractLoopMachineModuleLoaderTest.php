@@ -67,24 +67,6 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
     }
 
     /**
-     * Creates an {@see SplObserver} instance.
-     *
-     * @since [*next-version*]
-     *
-     * @param callable $update The notify-update callback. Default: null
-     *
-     * @return SplObserver The created instance.
-     */
-    public function createSplObserver($update = null)
-    {
-        $mock = $this->mock('\\SplObserver')
-            ->update($update)
-            ->new();
-
-        return $mock;
-    }
-
-    /**
      * Tests whether a valid instance of the test subject can be created.
      *
      * @since [*next-version*]
