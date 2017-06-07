@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RebelCode\\Modular\\": "src"
+            "RebelCode\\Modular\\Loader\\": "src"
         }
     },
     "scripts": {

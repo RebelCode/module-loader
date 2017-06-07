@@ -1,16 +1,16 @@
 <?php
 
-namespace RebelCode\Modular\FuncTest;
+namespace RebelCode\Modular\FuncTest\Loader;
 
 use Dhii\Machine\LoopMachine;
 use Dhii\Modular\ModuleInterface;
-use RebelCode\Modular\AbstractLoopMachineModuleLoader;
+use RebelCode\Modular\Loader\AbstractLoopMachineModuleLoader;
 use SplObserver;
 use Xpmock\MockWriter;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see RebelCode\Modular\AbstractLoopMachineModuleLoader}.
+ * Tests {@see RebelCode\Modular\Loader\AbstractLoopMachineModuleLoader}.
  *
  * @since [*next-version*]
  */
@@ -21,7 +21,7 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'RebelCode\\Modular\\AbstractLoopMachineModuleLoader';
+    const TEST_SUBJECT_CLASSNAME = 'RebelCode\\Modular\\Loader\\AbstractLoopMachineModuleLoader';
 
     /**
      * The name of the module class or interface to use for testing.
@@ -82,7 +82,7 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
         );
 
         $this->assertInstanceOf(
-            'RebelCode\\Modular\\AbstractModuleLoader',
+            'RebelCode\\Modular\\Loader\\AbstractModuleLoader',
             $subject,
             'Subject is not a valid AbstractModuleLoader instance.'
         );

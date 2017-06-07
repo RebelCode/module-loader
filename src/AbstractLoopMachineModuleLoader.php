@@ -1,6 +1,6 @@
 <?php
 
-namespace RebelCode\Modular;
+namespace RebelCode\Modular\Loader;
 
 use Dhii\Machine\LoopMachine;
 use Dhii\Modular\ModuleInterface;

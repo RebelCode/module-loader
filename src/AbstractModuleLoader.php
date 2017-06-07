@@ -1,6 +1,6 @@
 <?php
 
-namespace RebelCode\Modular;
+namespace RebelCode\Modular\Loader;
 
 use Dhii\Modular\ModuleInterface;
 use Traversable;

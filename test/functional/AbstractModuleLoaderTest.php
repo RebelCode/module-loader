@@ -1,13 +1,14 @@
 <?php
 
-namespace RebelCode\Modular\FuncTest;
+namespace RebelCode\Modular\FuncTest\Loader;
 
 use Dhii\Modular\ModuleInterface;
-use RebelCode\Modular\AbstractModuleLoader;
+use RebelCode\Modular\Loader\AbstractModuleLoader;
 use Xpmock\TestCase;
 
+
 /**
- * Tests {@see RebelCode\Modular\AbstractModuleLoader}.
+ * Tests {@see RebelCode\Modular\Loader\AbstractModuleLoader}.
  *
  * @since [*next-version*]
  */
@@ -18,7 +19,7 @@ class AbstractModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'RebelCode\\Modular\\AbstractModuleLoader';
+    const TEST_SUBJECT_CLASSNAME = 'RebelCode\\Modular\\Loader\\AbstractModuleLoader';
 
     /**
      * The name of the module class or interface to use for testing.
