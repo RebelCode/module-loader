@@ -63,53 +63,6 @@ abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader
     }
 
     /**
-     * Attaches an observer.
-     *
-     * @since [*next-version*]
-     *
-     * @param SplObserver $observer The observer to attach.
-     * @param int         $priority The priority: higher numbers indicate earlier notification. Default: 0
-     *
-     * @return $this
-     */
-    protected function _attach(SplObserver $observer, $priority = 0)
-    {
-        $this->_getLoopMachine()->attach($observer, $priority);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     *
-     * @param SplObserver $observer The observer to detach.
-     *
-     * @return $this
-     */
-    protected function _detach(SplObserver $observer)
-    {
-        $this->_getLoopMachine()->detach($observer);
-
-        return $this;
-    }
-
-    /**
-     * Notifies the observers.
-     *
-     * @since [*next-version*]
-     *
-     * @return $this
-     */
-    protected function _notify()
-    {
-        $this->_getLoopMachine()->notify();
-
-        return $this;
-    }
-
-    /**
      * Performs updating when a subject notified this instance.
      *
      * @since [*next-version*]
