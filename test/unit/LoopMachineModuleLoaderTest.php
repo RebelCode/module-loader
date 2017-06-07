@@ -51,28 +51,11 @@ class LoopMachineModuleLoaderTest extends TestCase
     }
 
     /**
-     * Tests the constructor to assert whether the injected loop machine instance is correctly set.
-     *
-     * @since [*next-version*]
-     */
-    public function testConstructorLoopMachine()
-    {
-        $loopMachine = new LoopMachine();
-        $subject     = new LoopMachineModuleLoader($loopMachine);
-
-        $this->assertSame(
-            $loopMachine,
-            $subject->getLoopMachine(),
-            'The loop machine instance returned by the getter is not the constructor injected instance.'
-        );
-    }
-
-    /**
      * Tests the constructor to assert whether the module loader is observing the loop machine.
      *
      * @since [*next-version*]
      */
-    public function testConstructorIsObservingSelf()
+    public function testConstructor()
     {
         $loopMachine = new LoopMachine();
         $subject     = new LoopMachineModuleLoader($loopMachine);
@@ -80,25 +63,6 @@ class LoopMachineModuleLoaderTest extends TestCase
         $this->assertTrue(
             $loopMachine->getObservers()->contains($subject),
             'The module loader is not attached as an observer of the loop machine.'
-        );
-    }
-
-    /**
-     * Tests the loop machine getter and setter methods to assert if the correct instance is set and retrieved.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetSetLoopMachine()
-    {
-        $subject     = new LoopMachineModuleLoader(new LoopMachine());
-        $loopMachine = new LoopMachine();
-
-        $subject->setLoopMachine($loopMachine);
-
-        $this->assertSame(
-            $loopMachine,
-            $subject->getLoopMachine(),
-            'The loop machine instance returned by the getter is not the instance given to the setter.'
         );
     }
 

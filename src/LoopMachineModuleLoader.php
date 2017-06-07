@@ -24,34 +24,6 @@ class LoopMachineModuleLoader extends AbstractLoopMachineModuleLoader implements
     }
 
     /**
-     * Retrieves the loop machine instance.
-     *
-     * @since [*next-version*]
-     *
-     * @return LoopMachine
-     */
-    public function getLoopMachine()
-    {
-        return $this->_getLoopMachine();
-    }
-
-    /**
-     * Sets the loop machine instance.
-     *
-     * @since [*next-version*]
-     *
-     * @param LoopMachine $loopMachine The loop machine.
-     *
-     * @return $this
-     */
-    public function setLoopMachine(LoopMachine $loopMachine)
-    {
-        $this->_setLoopMachine($loopMachine);
-
-        return $this;
-    }
-
-    /**
      * {@inheritDoc}
      *
      * @since [*next-version*]
