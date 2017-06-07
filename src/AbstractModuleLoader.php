@@ -60,7 +60,7 @@ abstract class AbstractModuleLoader
     protected function _attemptLoadModule(ModuleInterface $module)
     {
         if ($this->_canLoadModule($module)) {
-            $module->load();
+            $this->_loadModule($module);
 
             return;
         }
