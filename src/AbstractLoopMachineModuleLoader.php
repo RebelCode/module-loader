@@ -3,6 +3,7 @@
 namespace RebelCode\Modular;
 
 use Dhii\Machine\LoopMachine;
+use Dhii\Modular\ModuleInterface;
 use SplObserver;
 use SplSubject;
 
@@ -79,19 +80,16 @@ abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader impl
      */
     public function update(SplSubject $subject)
     {
-        // Only continue is subject is a Loop Machine Module Loader.
-        if (!$subject instanceof AbstractLoopMachineModuleLoader) {
-            return $this;
-        }
-
         // Only continue if the Loop Machine is in "loop state".
-        if ($subject->_getLoopMachine()->getState() !== LoopMachine::STATE_LOOP) {
+        if ($subject->getState() !== LoopMachine::STATE_LOOP) {
             return $this;
         }
 
-        $module = $subject->_getLoopMachine()->getCurrent();
+        $module = $subject->getCurrent();
 
-        $this->_attemptLoadModule($module);
+        if ($module instanceof ModuleInterface) {
+            $this->_attemptLoadModule($module);
+        }
 
         return $this;
     }
