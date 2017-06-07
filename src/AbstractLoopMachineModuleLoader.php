@@ -11,7 +11,7 @@ use SplSubject;
  *
  * @since [*next-version*]
  */
-abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader
+abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader implements SplObserver
 {
     /**
      * The loop machine instance.
@@ -63,15 +63,11 @@ abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader
     }
 
     /**
-     * Performs updating when a subject notified this instance.
+     * {@inheritDoc}
      *
      * @since [*next-version*]
-     *
-     * @param SplSubject $subject The subject that notified this instance.
-     *
-     * @return $this
      */
-    protected function _update(SplSubject $subject)
+    public function update(SplSubject $subject)
     {
         // Only continue is subject is a Loop Machine Module Loader.
         if (!$subject instanceof AbstractLoopMachineModuleLoader) {
