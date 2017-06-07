@@ -23,6 +23,16 @@ abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader impl
     protected $loopMachine;
 
     /**
+     * Internal parameterless constructor.
+     *
+     * @since [*next-version*]
+     */
+    protected function _construct()
+    {
+       $this->_getLoopMachine()->attach($this);
+    }
+
+    /**
      * Retrieves the loop machine instance.
      *
      * @since [*next-version*]
