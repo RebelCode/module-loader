@@ -6,6 +6,7 @@ use Dhii\Machine\LoopMachine;
 use Dhii\Modular\ModuleInterface;
 use RebelCode\Modular\AbstractLoopMachineModuleLoader;
 use SplObserver;
+use Xpmock\MockWriter;
 use Xpmock\TestCase;
 
 /**
@@ -121,103 +122,34 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
     }
 
     /**
-     * Tests the observer attaching method.
-     *
-     * @since [*next-version*]
-     */
-    public function testAttach()
-    {
-        $subject     = $this->createInstance();
-        $observer1   = $this->createSplObserver();
-        $observer2   = $this->createSplObserver();
-
-        $subject->this()->_attach($observer1);
-        $subject->this()->_attach($observer2);
-
-        /* @var $loopMachine LoopMachine */
-        $loopMachine = $subject->this()->_getLoopMachine();
-        $observers   = iterator_to_array($loopMachine->getObservers());
-
-        $this->assertEquals(array($observer1, $observer2), $observers);
-    }
-
-    /**
-     * Tests the observer detaching method.
-     *
-     * @since [*next-version*]
-     */
-    public function testDetach()
-    {
-        $subject     = $this->createInstance();
-        $observer1   = $this->createSplObserver();
-        $observer2   = $this->createSplObserver();
-        $observer3   = $this->createSplObserver();
-
-        $subject->this()->_attach($observer1);
-        $subject->this()->_attach($observer2);
-        $subject->this()->_attach($observer3);
-
-        $subject->this()->_detach($observer2);
-
-        /* @var $loopMachine LoopMachine */
-        $loopMachine = $subject->this()->_getLoopMachine();
-        $observers   = iterator_to_array($loopMachine->getObservers());
-
-        $this->assertEquals(array($observer1, $observer3), $observers);
-    }
-
-    /**
-     * Tests the observer notification method.
-     *
-     * @since [*next-version*]
-     */
-    public function testNotify()
-    {
-        $subject     = $this->createInstance();
-        $invokedBy   = false;
-        $observer    = $this->createSplObserver(function($notifier) use(&$invokedBy) {
-            $invokedBy = $notifier;
-        });
-
-        $subject->this()->_attach($observer);
-        $subject->this()->_notify();
-
-        $this->assertSame($invokedBy, $subject->this()->_getLoopMachine());
-    }
-
-    /**
      * Tests the module loading method.
      *
      * @since [*next-version*]
      */
     public function testLoad()
     {
-        $subject = $this->createInstance(
-            null,
-            null,
-            null
-        );
-        $observer = $this->createSplObserver(function(LoopMachine $loopMachine) use ($subject) {
-            if ($loopMachine->getState() === LoopMachine::STATE_LOOP) {
-                $subject->this()->_attemptLoadModule($loopMachine->getCurrent());
+        $mock = new MockWriter(static::TEST_SUBJECT_CLASSNAME, $this, array(
+            'loopMachine'    => new LoopMachine(),
+
+            // Only load modules with IDs prefixed with "test-"
+            '_canLoadModule' => function($module) {
+                return stripos($module->getId(), 'test-') === 0;
             }
-        });
+        ));
 
-        $subject->this()->_attach($observer);
+        // Expect the update method to be called exactly 3 times.
+        $mock->update($this->atLeast(3));
 
-        $expected = array('test-1', 'num-two', 'test-3');
-        $loaded   = array();
-        $onLoad   = function() use (&$loaded) {
-            $loaded[] = $this->getId();
-        };
-        $modules = array(
-            $this->createModuleInstance('test-1', $onLoad),
-            $this->createModuleInstance('num-two', $onLoad),
-            $this->createModuleInstance('test-3', $onLoad),
-        );
+        $subject = $mock->new();
+        $subject->this()->_construct();
 
-        $subject->this()->_load($modules);
+        // Module 1: expected to be loaded.
+        $module1 = $this->createModuleInstance('test-1')->mock()->load(null, $this->once());
+        // Module 2: expected to be ignored.
+        $module2 = $this->createModuleInstance('module2')->mock()->load(null, $this->never());
+        // Module 3: expected to be loaded.
+        $module3 = $this->createModuleInstance('test-3')->mock()->load(null, $this->once());
 
-        $this->assertEquals($expected, $loaded);
+        $subject->this()->_load(array($module1, $module2, $module3));
     }
 }
