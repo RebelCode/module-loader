@@ -36,7 +36,8 @@ class AbstractModuleLoaderTest extends TestCase
      */
     public function createInstance($prepare = null, $canLoad = null, $handleUnloaded = null)
     {
-        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME);
+        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
+            ->_iterate();
 
         if (!is_null($prepare)) {
             $mock->_prepareModuleList($prepare);
@@ -84,6 +85,17 @@ class AbstractModuleLoaderTest extends TestCase
         );
     }
 
+    public function testLoadModule()
+    {
+        $subject = $this->createInstance();
+        $module  = $this->createModuleInstance('test');
+
+        // Expect load() to be called once on the module.
+        $module->mock()->load(null, $this->once());
+
+        $subject->this()->_loadModule($module);
+    }
+
     /**
      * Tests the module loading attempt method.
      *
@@ -91,28 +103,17 @@ class AbstractModuleLoaderTest extends TestCase
      */
     public function testAttemptLoadModule()
     {
-        $subject = $this->createInstance(
-            null,
-            null,
-            null
-        );
-        $expected = array('test-foo', 'no-prefix');
-        $loaded   = array();
-        $onLoad   = function() use (&$loaded) {
-            $loaded[] = $this->getId();
-        };
+        $subject = $this->createInstance();
+        $module  = $this->createModuleInstance('test');
 
-        $module1 = $this->createModuleInstance('test-foo', $onLoad);
-        $module2 = $this->createModuleInstance('no-prefix', $onLoad);
+        // Expect load() to be called once on the module.
+        $module->mock()->load(null, $this->once());
 
-        $subject->this()->_attemptLoadModule($module1);
-        $subject->this()->_attemptLoadModule($module2);
-
-        $this->assertEquals($expected, $loaded);
+        $subject->this()->_attemptLoadModule($module);
     }
 
     /**
-     * Tests the module loading attempt method with a condition that filters modules.
+     * Tests the module loading attempt method with a condition that is satisfied.
      *
      * @since [*next-version*]
      */
@@ -122,145 +123,36 @@ class AbstractModuleLoaderTest extends TestCase
             null,
             function($module) {
                 return stripos($module->getId(), 'test-') === 0;
-            },
-            null
-        );
-        $expected = array('test-foo');
-        $loaded   = array();
-        $onLoad   = function() use (&$loaded) {
-            $loaded[] = $this->getId();
-        };
-
-        $module1 = $this->createModuleInstance('test-foo', $onLoad);
-        $module2 = $this->createModuleInstance('no-prefix', $onLoad);
-
-        $subject->this()->_attemptLoadModule($module1);
-        $subject->this()->_attemptLoadModule($module2);
-
-        $this->assertEquals($expected, $loaded);
-    }
-
-    /**
-     * Tests the module loading method.
-     *
-     * @since [*next-version*]
-     */
-    public function testLoad()
-    {
-        $subject = $this->createInstance(
-            null,
-            null,
-            null
-        );
-        $expected = array('test-1', 'num-two', 'test-3');
-        $loaded   = array();
-        $onLoad   = function() use (&$loaded) {
-            $loaded[] = $this->getId();
-        };
-        $modules = array(
-            $this->createModuleInstance('test-1', $onLoad),
-            $this->createModuleInstance('num-two', $onLoad),
-            $this->createModuleInstance('test-3', $onLoad),
-        );
-
-        $subject->this()->_load($modules);
-
-        $this->assertEquals($expected, $loaded);
-    }
-
-    /**
-     * Tests the module loading method with module list preparation.
-     *
-     * @since [*next-version*]
-     */
-    public function testLoadWithPreparation()
-    {
-        $me = $this;
-
-        $loaded   = array();
-        $onLoad   = function() use (&$loaded) {
-            $loaded[] = $this->getId();
-        };
-
-        $subject = $this->createInstance(
-            function ($list) use($me, $onLoad) {
-                $list[] = $me->createModuleInstance('new', $onLoad);
-
-                return $list;
-            },
-            null,
-            null
-        );
-        $expected = array('test-1', 'test-2', 'test-3', 'new');
-        
-        $modules = array(
-            $this->createModuleInstance('test-1', $onLoad),
-            $this->createModuleInstance('test-2', $onLoad),
-            $this->createModuleInstance('test-3', $onLoad),
-        );
-
-        $subject->this()->_load($modules);
-
-        $this->assertEquals($expected, $loaded);
-    }
-
-    /**
-     * Tests the module loading method with a condition that filters modules.
-     *
-     * @since [*next-version*]
-     */
-    public function testLoadWithCondition()
-    {
-        $subject = $this->createInstance(
-            null,
-            function($module) {
-                return stripos($module->getId(), 'test-') === 0;
-            },
-            null
-        );
-        $loaded = array();
-        $onLoad = function() use (&$loaded) {
-            $loaded[] = $this->getId();
-        };
-        $modules = array(
-            $this->createModuleInstance('test-1', $onLoad),
-            $this->createModuleInstance('num-two', $onLoad),
-            $this->createModuleInstance('test-3', $onLoad),
-        );
-
-        $subject->this()->_load($modules);
-
-        $this->assertEquals(array('test-1', 'test-3'), $loaded);
-    }
-
-    /**
-     * Tests the method that handles unloaded modules.
-     *
-     * @since [*next-version*]
-     */
-    public function testLoadWithHandleUnloadedModule()
-    {
-        $unloaded = array();
-
-        $subject  = $this->createInstance(
-            null,
-            function($module) {
-                return stripos($module->getId(), 'test-') === 0;
-            },
-            function($module) use(&$unloaded) {
-                return $unloaded[] = $module->getId();
             }
         );
 
-        $expected = array('num-two');
-        $modules  = array(
-            $this->createModuleInstance('test-1'),
-            $this->createModuleInstance('num-two'),
-            $this->createModuleInstance('test-3'),
+        $module = $this->createModuleInstance('test-module');
+
+        // Expect load() to be called once on the module.
+        $module->mock()->load(null, $this->once());
+
+        $subject->this()->_attemptLoadModule($module);
+    }
+
+    /**
+     * Tests the module loading attempt method with a condition that fails.
+     *
+     * @since [*next-version*]
+     */
+    public function testAttemptLoadModuleWithFailedCondition()
+    {
+        $subject = $this->createInstance(
+            null,
+            function($module) {
+                return stripos($module->getId(), 'test-') === 0;
+            }
         );
 
-        $subject->this()->_load($modules);
+        $module = $this->createModuleInstance('foo-module');
 
-        $this->assertEquals($expected, $unloaded);
+        // Expect load() to be NOT called on the module.
+        $module->mock()->load(null, $this->never());
+
+        $subject->this()->_attemptLoadModule($module);
     }
 }

@@ -41,14 +41,7 @@ abstract class AbstractModuleLoader
      *
      * @return $this
      */
-    protected function _iterate($modules)
-    {
-        foreach ($modules as $_module) {
-            $this->_attemptLoadModule($_module);
-        }
-
-        return $this;
-    }
+    abstract protected function _iterate($modules);
 
     /**
      * Attempts to load a module.
