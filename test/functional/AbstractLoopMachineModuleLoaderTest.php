@@ -3,9 +3,8 @@
 namespace RebelCode\Modular\FuncTest\Loader;
 
 use Dhii\Machine\LoopMachine;
-use Dhii\Modular\ModuleInterface;
 use RebelCode\Modular\Loader\AbstractLoopMachineModuleLoader;
-use SplObserver;
+use RebelCode\Modular\Module\ModuleInterface;
 use Xpmock\MockWriter;
 use Xpmock\TestCase;
 
@@ -28,7 +27,7 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const MODULE_CLASSNAME = 'Dhii\\Modular\\ModuleInterface';
+    const MODULE_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleInterface';
 
     /**
      * Creates a new instance of the test subject.
@@ -54,14 +53,14 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @param string $id The ID of the module.
+     * @param string $key The module key.
      *
      * @return ModuleInterface
      */
-    public function createModuleInstance($id, $load = null)
+    public function createModuleInstance($key, $load = null)
     {
         return $this->mock(static::MODULE_CLASSNAME)
-            ->getId(function() use ($id) { return $id; })
+            ->getKey($key)
             ->load($load)
             ->new();
     }
@@ -113,9 +112,9 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
         $mock = new MockWriter(static::TEST_SUBJECT_CLASSNAME, $this, array(
             'loopMachine'    => new LoopMachine(),
 
-            // Only load modules with IDs prefixed with "test-"
+            // Only load modules with keys prefixed with "test-"
             '_canLoadModule' => function($module) {
-                return stripos($module->getId(), 'test-') === 0;
+                return stripos($module->getKey(), 'test-') === 0;
             }
         ));
 

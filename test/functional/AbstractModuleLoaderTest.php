@@ -2,10 +2,9 @@
 
 namespace RebelCode\Modular\FuncTest\Loader;
 
-use Dhii\Modular\ModuleInterface;
 use RebelCode\Modular\Loader\AbstractModuleLoader;
+use RebelCode\Modular\Module\ModuleInterface;
 use Xpmock\TestCase;
-
 
 /**
  * Tests {@see RebelCode\Modular\Loader\AbstractModuleLoader}.
@@ -26,7 +25,7 @@ class AbstractModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const MODULE_CLASSNAME = 'Dhii\\Modular\\ModuleInterface';
+    const MODULE_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleInterface';
 
     /**
      * Creates a new instance of the test subject.
@@ -60,14 +59,14 @@ class AbstractModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @param string $id The ID of the module.
+     * @param string $key The module key.
      *
      * @return ModuleInterface
      */
-    public function createModuleInstance($id, $load = null)
+    public function createModuleInstance($key, $load = null)
     {
         return $this->mock(static::MODULE_CLASSNAME)
-            ->getId(function() use ($id) { return $id; })
+            ->getKey($key)
             ->load($load)
             ->new();
     }
@@ -123,7 +122,7 @@ class AbstractModuleLoaderTest extends TestCase
         $subject = $this->createInstance(
             null,
             function($module) {
-                return stripos($module->getId(), 'test-') === 0;
+                return stripos($module->getKey(), 'test-') === 0;
             }
         );
 
@@ -145,7 +144,7 @@ class AbstractModuleLoaderTest extends TestCase
         $subject = $this->createInstance(
             null,
             function($module) {
-                return stripos($module->getId(), 'test-') === 0;
+                return stripos($module->getKey(), 'test-') === 0;
             }
         );
 

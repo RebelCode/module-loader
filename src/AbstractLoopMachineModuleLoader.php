@@ -3,7 +3,7 @@
 namespace RebelCode\Modular\Loader;
 
 use Dhii\Machine\LoopMachine;
-use Dhii\Modular\ModuleInterface;
+use Dhii\Modular\Module\ModuleInterface;
 use SplObserver;
 use SplSubject;
 

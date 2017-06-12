@@ -3,7 +3,7 @@
 namespace RebelCode\Modular\Loader;
 
 use Dhii\Machine\LoopMachine;
-use Dhii\Modular\ModuleLoaderInterface;
+use Dhii\Modular\Loader\ModuleLoaderInterface;
 
 /**
  * A module loader that utilises the functionality of a loop machine for loading modules.

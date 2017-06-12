@@ -3,8 +3,8 @@
 namespace RebelCode\Modular\FuncTest;
 
 use Dhii\Machine\LoopMachine;
-use Dhii\Modular\ModuleInterface;
 use RebelCode\Modular\Loader\LoopMachineModuleLoader;
+use RebelCode\Modular\Module\ModuleInterface;
 use Xpmock\TestCase;
 
 /**
@@ -19,7 +19,7 @@ class LoopMachineModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const MODULE_CLASSNAME = 'Dhii\\Modular\\ModuleInterface';
+    const MODULE_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleInterface';
 
     /**
      * Create a new instance of the test subject.
@@ -38,14 +38,14 @@ class LoopMachineModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @param string $id The ID of the module.
+     * @param string $key The module key.
      *
      * @return ModuleInterface
      */
-    public function createModuleInstance($id, $load = null)
+    public function createModuleInstance($key, $load = null)
     {
         return $this->mock(static::MODULE_CLASSNAME)
-            ->getId(function() use ($id) { return $id; })
+            ->getKey($key)
             ->load($load)
             ->new();
     }

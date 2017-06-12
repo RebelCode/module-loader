@@ -2,7 +2,7 @@
 
 namespace RebelCode\Modular\Loader;
 
-use Dhii\Modular\ModuleInterface;
+use Dhii\Modular\Module\ModuleInterface;
 use Traversable;
 
 /**
