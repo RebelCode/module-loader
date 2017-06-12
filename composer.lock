@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1968a9b9fef8cebe1f5923c1e85599e2",
+    "content-hash": "fbdb70f81518c25a8b7e5acb1adccfe6",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -38,17 +38,17 @@
             "time": "2017-02-15 19:27:50"
         },
         {
-            "name": "dhii/data-identifiable-interface",
-            "version": "dev-master",
+            "name": "dhii/data-key-value-aware-interface",
+            "version": "v0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dhii/data-identifiable-interface.git",
-                "reference": "59e160c85c9d9246ce51ad611ce2bb686ba3dc2d"
+                "url": "https://github.com/Dhii/data-key-value-aware-interface.git",
+                "reference": "220232bc9040fab78a6c039f5a4a5f9542317bdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/data-identifiable-interface/zipball/59e160c85c9d9246ce51ad611ce2bb686ba3dc2d",
-                "reference": "59e160c85c9d9246ce51ad611ce2bb686ba3dc2d",
+                "url": "https://api.github.com/repos/Dhii/data-key-value-aware-interface/zipball/220232bc9040fab78a6c039f5a4a5f9542317bdc",
+                "reference": "220232bc9040fab78a6c039f5a4a5f9542317bdc",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
+                "phpunit/phpunit": "4.*",
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
@@ -76,61 +76,8 @@
                     "email": "development@dhii.co"
                 }
             ],
-            "description": "Interfaces for objects that are identifiable.",
-            "time": "2017-03-07 16:25:09"
-        },
-        {
-            "name": "dhii/factory-interface",
-            "version": "dev-task/initial-interfaces",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/factory-interface.git",
-                "reference": "09ce63b7f023c4386ba280444b2d091fda548c6e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/factory-interface/zipball/09ce63b7f023c4386ba280444b2d091fda548c6e",
-                "reference": "09ce63b7f023c4386ba280444b2d091fda548c6e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "psr/container": "^1.0",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Factory\\": "src"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "phpunit"
-                ],
-                "csfix": [
-                    "php-cs-fixer fix -vvv"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "support": {
-                "source": "https://github.com/Dhii/factory-interface/tree/task/initial-interfaces",
-                "issues": "https://github.com/Dhii/factory-interface/issues"
-            },
-            "time": "2017-06-02 13:01:12"
+            "description": "Interfaces that aim to increase interoperability of value objects",
+            "time": "2017-01-21T17:35:30+00:00"
         },
         {
             "name": "dhii/loop-machine",
@@ -183,17 +130,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/modular-interface.git",
-                "reference": "4c0b6e53b74b986c556e0e9b2ad7a9b906213bde"
+                "reference": "f09b210ea463e70e5e3795e1aeb6510b7a70a22a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/4c0b6e53b74b986c556e0e9b2ad7a9b906213bde",
-                "reference": "4c0b6e53b74b986c556e0e9b2ad7a9b906213bde",
+                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/f09b210ea463e70e5e3795e1aeb6510b7a70a22a",
+                "reference": "f09b210ea463e70e5e3795e1aeb6510b7a70a22a",
                 "shasum": ""
             },
             "require": {
-                "dhii/data-identifiable-interface": "dev-master",
-                "dhii/factory-interface": "dev-task/initial-interfaces",
+                "dhii/data-key-value-aware-interface": "^0.1",
                 "php": "^5.3 | ^7.0"
             },
             "require-dev": {
@@ -219,7 +165,7 @@
                 }
             ],
             "description": "Interfaces for modular systems.",
-            "time": "2017-06-05 15:32:40"
+            "time": "2017-06-12 14:17:02"
         },
         {
             "name": "psr/container",
@@ -269,6 +215,114 @@
                 "psr"
             ],
             "time": "2017-02-14 16:28:37"
+        },
+        {
+            "name": "rebelcode/module-interface",
+            "version": "dev-task/initial-interfaces",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCodecom/module-interface.git",
+                "reference": "f337bbffc55a9098a24b09e16029475cb2a53d9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCodecom/module-interface/zipball/f337bbffc55a9098a24b09e16029475cb2a53d9e",
+                "reference": "f337bbffc55a9098a24b09e16029475cb2a53d9e",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/modular-interface": "dev-task/initial-interface",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\Modular\\Module\\": "src"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fix fix -vvv"
+                ]
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "Interfaces for modules.",
+            "support": {
+                "source": "https://github.com/RebelCodecom/module-interface/tree/task/initial-interfaces",
+                "issues": "https://github.com/RebelCodecom/module-interface/issues"
+            },
+            "time": "2017-06-12 12:02:45"
+        },
+        {
+            "name": "rebelcode/module-iterator-abstract",
+            "version": "dev-task/initial-classes",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCodecom/module-iterator-abstract.git",
+                "reference": "9bd90f4c5031cb211cbd606db981631b0e844a9c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCodecom/module-iterator-abstract/zipball/9bd90f4c5031cb211cbd606db981631b0e844a9c",
+                "reference": "9bd90f4c5031cb211cbd606db981631b0e844a9c",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/modular-interface": "dev-task/initial-interface",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\Modular\\Iterator\\": "src"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fixer fix -vvv"
+                ]
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "Basic and abstract functionality for module iterators.",
+            "support": {
+                "source": "https://github.com/RebelCodecom/module-iterator-abstract/tree/task/initial-classes",
+                "issues": "https://github.com/RebelCodecom/module-iterator-abstract/issues"
+            },
+            "time": "2017-06-12 14:13:00"
         }
     ],
     "packages-dev": [
@@ -1736,12 +1790,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6f72c1ed2de5df55a90991bfeb3030a8b91949c0"
+                "reference": "bd7bf81dc914c7c7c01daad32946681c85ea16ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6f72c1ed2de5df55a90991bfeb3030a8b91949c0",
-                "reference": "6f72c1ed2de5df55a90991bfeb3030a8b91949c0",
+                "url": "https://api.github.com/repos/symfony/console/zipball/bd7bf81dc914c7c7c01daad32946681c85ea16ae",
+                "reference": "bd7bf81dc914c7c7c01daad32946681c85ea16ae",
                 "shasum": ""
             },
             "require": {
@@ -1750,7 +1804,8 @@
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
-                "symfony/dependency-injection": "<3.3"
+                "symfony/dependency-injection": "<3.3",
+                "symfony/process": "<3.3"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -1759,7 +1814,7 @@
                 "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
                 "symfony/filesystem": "~2.8|~3.0|~4.0",
                 "symfony/http-kernel": "~2.8|~3.0|~4.0",
-                "symfony/process": "~2.8|~3.0|~4.0"
+                "symfony/process": "~3.3|~4.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -1797,7 +1852,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02 19:25:52"
+            "time": "2017-06-10 12:08:03"
         },
         {
             "name": "symfony/debug",
@@ -1805,12 +1860,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "6694bfe6ac1ab1b06bda40c98c98fa1d06739296"
+                "reference": "9d40ad561ed0ca824de0c514077dc39e5d6b2605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/6694bfe6ac1ab1b06bda40c98c98fa1d06739296",
-                "reference": "6694bfe6ac1ab1b06bda40c98c98fa1d06739296",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/9d40ad561ed0ca824de0c514077dc39e5d6b2605",
+                "reference": "9d40ad561ed0ca824de0c514077dc39e5d6b2605",
                 "shasum": ""
             },
             "require": {
@@ -1853,7 +1908,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:02:15"
+            "time": "2017-06-07 14:09:28"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2022,12 +2077,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "adebc086600bc93b45d8d6721c8f21088a2be4dc"
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/adebc086600bc93b45d8d6721c8f21088a2be4dc",
-                "reference": "adebc086600bc93b45d8d6721c8f21088a2be4dc",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
                 "shasum": ""
             },
             "require": {
@@ -2039,7 +2094,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -2073,7 +2128,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-05-29 15:51:17"
+            "time": "2017-06-09 14:24:12"
         },
         {
             "name": "symfony/process",
@@ -2081,12 +2136,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "b9b8a8ad479898d6d71bc699b4d729886a412ffc"
+                "reference": "201c3bd3f167804bdfba2bf6a3a26097978a854a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/b9b8a8ad479898d6d71bc699b4d729886a412ffc",
-                "reference": "b9b8a8ad479898d6d71bc699b4d729886a412ffc",
+                "url": "https://api.github.com/repos/symfony/process/zipball/201c3bd3f167804bdfba2bf6a3a26097978a854a",
+                "reference": "201c3bd3f167804bdfba2bf6a3a26097978a854a",
                 "shasum": ""
             },
             "require": {
@@ -2122,7 +2177,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-24 11:37:21"
+            "time": "2017-06-09 13:37:35"
         },
         {
             "name": "symfony/stopwatch",
@@ -2282,6 +2337,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "rebelcode/module-interface": 20,
+        "rebelcode/module-iterator-abstract": 20,
         "dhii/modular-interface": 20,
         "container-interop/service-provider": 20,
         "dhii/loop-machine": 20,

@@ -12,6 +12,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.3 | ^7.0",
+        "rebelcode/module-interface": "dev-task/initial-interfaces",
+        "rebelcode/module-iterator-abstract": "dev-task/initial-classes",
         "dhii/modular-interface": "dev-task/initial-interface",
         "container-interop/service-provider": "dev-master",
         "dhii/loop-machine": "dev-master"
@@ -39,6 +41,14 @@
         {
             "type": "vcs",
             "url": "https://github.com/Dhii/factory-interface"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/RebelCodecom/module-iterator-abstract"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/RebelCodecom/module-interface"
         }
     ]
 }
