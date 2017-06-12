@@ -37,7 +37,7 @@ abstract class AbstractModuleLoader
      *
      * @uses AbstractModuleLoader::_attemptLoadModule()
      *
-     * @param ModuleInterface[]|\Traversable $modules The modules.
+     * @param ModuleInterface[]|Traversable $modules The modules.
      *
      * @return $this
      */
@@ -82,9 +82,9 @@ abstract class AbstractModuleLoader
      *
      * @since [*next-version*]
      *
-     * @param ModuleInterface[]|\Traversable $modules The module collection.
+     * @param ModuleInterface[]|Traversable $modules The module collection.
      *
-     * @return ModuleInterface[]|\Traversable
+     * @return ModuleInterface[]|Traversable
      */
     protected function _prepareModuleList($modules)
     {

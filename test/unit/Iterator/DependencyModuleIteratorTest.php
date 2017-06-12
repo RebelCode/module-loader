@@ -2,13 +2,13 @@
 
 namespace RebelCode\Modular\FuncTest\Loader;
 
-use RebelCode\Modular\Loader\DependencyModuleIterator;
+use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Loader\LoopMachineModuleLoader;
 use RebelCode\Modular\Module\ModuleInterface;
 use Xpmock\TestCase;
 
 /**
- * 
+ * Tests the {@see RebelCode\Modular\Iterator\DependencyModuleIterator} class.
  *
  * @since [*next-version*]
  */

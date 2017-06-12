@@ -130,12 +130,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/modular-interface.git",
-                "reference": "f09b210ea463e70e5e3795e1aeb6510b7a70a22a"
+                "reference": "84e4f4ec6c478d5fe11f45dd63d330666d50a1c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/f09b210ea463e70e5e3795e1aeb6510b7a70a22a",
-                "reference": "f09b210ea463e70e5e3795e1aeb6510b7a70a22a",
+                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/84e4f4ec6c478d5fe11f45dd63d330666d50a1c4",
+                "reference": "84e4f4ec6c478d5fe11f45dd63d330666d50a1c4",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +165,7 @@
                 }
             ],
             "description": "Interfaces for modular systems.",
-            "time": "2017-06-12 14:17:02"
+            "time": "2017-06-12 15:30:53"
         },
         {
             "name": "psr/container",

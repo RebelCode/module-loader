@@ -1,17 +1,17 @@
 <?php
 
-namespace RebelCode\Modular\Loader;
+namespace RebelCode\Modular\Iterator;
 
 use Dhii\Modular\Module\ModuleInterface;
-use RebelCode\Modular\Iterator\AbstractDependencyModuleIterator;
 use RebelCode\Modular\Module\ModuleInterface as RebelCodeModuleInterface;
+use Iterator;
 
 /**
  *  A module iterator that handles module dependencies.
  *
  * @since [*next-version*]
  */
-class DependencyModuleIterator extends AbstractDependencyModuleIterator implements \Iterator
+class DependencyModuleIterator extends AbstractDependencyModuleIterator implements Iterator
 {
     /**
      * Constructor.
