@@ -53,7 +53,8 @@ class AbstractLoopMachineModuleLoaderTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @param string $key The module key.
+     * @param string   $key  The module key.
+     * @param callable $load The load callback.
      *
      * @return ModuleInterface
      */
