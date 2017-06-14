@@ -15,7 +15,6 @@
         "rebelcode/module-interface": "dev-task/initial-interfaces",
         "rebelcode/module-iterator-abstract": "dev-task/initial-classes",
         "dhii/modular-interface": "dev-task/initial-interface",
-        "container-interop/service-provider": "dev-master",
         "dhii/loop-machine": "dev-master"
     },
     "require-dev": {
@@ -37,10 +36,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/Dhii/machine-loop-machine"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/factory-interface"
         },
         {
             "type": "vcs",
