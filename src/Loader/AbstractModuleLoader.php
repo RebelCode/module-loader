@@ -13,6 +13,15 @@ use Traversable;
 abstract class AbstractModuleLoader
 {
     /**
+     * Internal parameterless constructor.
+     *
+     * @since [*next-version*]
+     */
+    protected function _construct()
+    {
+    }
+
+    /**
      * Loads the given set of modules.
      *
      * @since [*next-version*]

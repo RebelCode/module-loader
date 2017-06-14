@@ -30,7 +30,9 @@ abstract class AbstractLoopMachineModuleLoader extends AbstractModuleLoader impl
      */
     protected function _construct()
     {
-       $this->_getLoopMachine()->attach($this);
+        parent::_construct();
+
+        $this->_getLoopMachine()->attach($this);
     }
 
     /**
