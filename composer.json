@@ -12,8 +12,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.3 | ^7.0",
+        "rebelcode/module-interface": "dev-task/initial-interfaces",
+        "rebelcode/module-iterator-abstract": "dev-task/initial-classes",
         "dhii/modular-interface": "dev-task/initial-interface",
-        "container-interop/service-provider": "dev-master",
         "dhii/loop-machine": "dev-master"
     },
     "require-dev": {
@@ -26,5 +27,23 @@
         "psr-4": {
             "RebelCode\\Modular\\": "src"
         }
-    }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Dhii/machine-loop-machine"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/RebelCodecom/module-iterator-abstract"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/RebelCodecom/module-interface"
+        }
+    ]
 }
