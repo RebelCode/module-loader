@@ -14,7 +14,6 @@
         "php": "^5.3 | ^7.0",
         "rebelcode/module-interface": "dev-develop",
         "rebelcode/module-iterator-abstract": "dev-develop",
-        "dhii/modular-interface": "dev-task/initial-interface",
         "dhii/loop-machine": "dev-master"
     },
     "require-dev": {

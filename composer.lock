@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a16c34c5eb7eab0af029ca2b6aa49404",
+    "content-hash": "ec4ba736013b64793e3689627071d8f5",
     "packages": [
         {
             "name": "dhii/collections-abstract-base",
@@ -138,16 +138,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/modular-interface.git",
-                "reference": "e3d396498239c0d1751c70ff2d751118bcb4195f"
+                "reference": "9a71948db5b09f223591395cf3afb90ec9304efe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/e3d396498239c0d1751c70ff2d751118bcb4195f",
-                "reference": "e3d396498239c0d1751c70ff2d751118bcb4195f",
+                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/9a71948db5b09f223591395cf3afb90ec9304efe",
+                "reference": "9a71948db5b09f223591395cf3afb90ec9304efe",
                 "shasum": ""
             },
             "require": {
-                "dhii/data-key-value-aware-interface": "^0.1",
+                "dhii/module-interface": "dev-develop",
                 "php": "^5.3 | ^7.0"
             },
             "require-dev": {
@@ -173,7 +173,50 @@
                 }
             ],
             "description": "Interfaces for modular systems.",
-            "time": "2017-06-16 07:31:41"
+            "time": "2017-06-21 08:50:53"
+        },
+        {
+            "name": "dhii/module-interface",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/module-interface.git",
+                "reference": "2103f11abdaa2f460a1ee4e702e9a30772085a02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/2103f11abdaa2f460a1ee4e702e9a30772085a02",
+                "reference": "2103f11abdaa2f460a1ee4e702e9a30772085a02",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/data-key-value-aware-interface": "^0.1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Modular\\Module\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for modules",
+            "time": "2017-06-19 11:11:58"
         },
         {
             "name": "rebelcode/module-interface",
@@ -181,16 +224,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCodecom/module-interface.git",
-                "reference": "ce8432ad90d4be92b4a195e588fb863bc2046c20"
+                "reference": "b95d54593aa19a85f8f8c149f527bcf0d7f705af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCodecom/module-interface/zipball/ce8432ad90d4be92b4a195e588fb863bc2046c20",
-                "reference": "ce8432ad90d4be92b4a195e588fb863bc2046c20",
+                "url": "https://api.github.com/repos/RebelCodecom/module-interface/zipball/b95d54593aa19a85f8f8c149f527bcf0d7f705af",
+                "reference": "b95d54593aa19a85f8f8c149f527bcf0d7f705af",
                 "shasum": ""
             },
             "require": {
-                "dhii/modular-interface": "dev-task/initial-interface",
+                "dhii/module-interface": "dev-develop",
                 "php": "^5.3 | ^7.0"
             },
             "require-dev": {
@@ -224,10 +267,10 @@
             ],
             "description": "Interfaces for modules.",
             "support": {
-                "source": "https://github.com/RebelCodecom/module-interface/tree/master",
+                "source": "https://github.com/RebelCodecom/module-interface/tree/develop",
                 "issues": "https://github.com/RebelCodecom/module-interface/issues"
             },
-            "time": "2017-06-13 15:18:18"
+            "time": "2017-06-19 11:31:44"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
@@ -2089,7 +2132,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14T15:44:48+00:00"
+            "time": "2017-06-14 15:44:48"
         },
         {
             "name": "symfony/process",
@@ -2242,7 +2285,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-14T20:38:21+00:00"
+            "time": "2017-06-14 20:38:21"
         },
         {
             "name": "webmozart/assert",
@@ -2300,7 +2343,6 @@
     "stability-flags": {
         "rebelcode/module-interface": 20,
         "rebelcode/module-iterator-abstract": 20,
-        "dhii/modular-interface": 20,
         "dhii/loop-machine": 20,
         "dhii/php-cs-fixer-config": 20
     },
