@@ -10,6 +10,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^5.3 | ^7.0",
         "rebelcode/module-interface": "dev-develop",
@@ -38,11 +39,11 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/RebelCodecom/module-iterator-abstract"
+            "url": "https://github.com/RebelCode/module-iterator-abstract"
         },
         {
             "type": "vcs",
-            "url": "https://github.com/RebelCodecom/module-interface"
+            "url": "https://github.com/RebelCode/module-interface"
         }
     ]
 }
